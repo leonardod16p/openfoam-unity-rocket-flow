@@ -1,2 +1,61 @@
-# openfoam-unity-rocket-flow
- Visualização comparativa de regimes de fluxo aerodinâmico: Supersônico (Terra, M=2.9) vs. Hipersônico (Titã, M=5.1)
+# Simulação de Fluxo: Terra vs Titã (OpenFOAM + Unity)
+
+Projeto desenvolvido para a disciplina de Computação Científica 2. O objetivo foi criar uma visualização interativa que compara como um foguete se comporta aerodinamicamente na Terra e em Titã (lua de Saturno).
+
+A ideia principal é entender como as ondas de choque geradas na geometria de um foguete se comportam com parâmetros que simulam a terra e Titã  voando na mesma velocidade.
+
+## Como testar (Download)
+Eu gerei um executável para quem quiser rodar a simulação sem precisar instalar o Unity.
+* **[Baixar a Versão Linux aqui](https://github.com/leonardod16p/openfoam-unity-rocket-flow/releases/tag/v1.0)**
+* Basta extrair o zip e rodar o executável.
+
+## Sobre o Projeto
+O foguete voa a 1000 m/s nos dois casos.
+* Terra: O som viaja a ~343 m/s. O foguete está a Mach 2.9.
+* Titã: É muito frio (94K) e denso, então o som viaja mais devagar (~194 m/s). O mesmo foguete atinge Mach 5.15 (Hipersônico).
+
+**Resultado Visual:**
+No OpenFOAM, isso muda o ângulo da onda de choque. Em Titã, o cone de choque fica bem mais fechado ("colado" no foguete) por causa do Mach elevado. Na terra, o cone se estabiliza com um formato de prato.
+
+
+## Ferramentas Usadas
+
+1.  **OpenFOAM (rhoCentralFoam/snappyHexMesh):**
+    * Usei para discretizar a geometria do foguete, calcular o escoamento compressível e gerar os dados físicos.
+2.  **ParaView:**
+    * Usei para visualizar os resultados e exportar a malha da onda de choque.
+3.  **Unity 3D:**
+    * De forma geral, usei para criar uma animação utilizando o que eu havia gerado de dados físicos e o que o ambiente Unity me dava.
+
+
+## Estrutura das Pastas
+`/OpenFOAM`: Contém os arquivos de configuração da simulação (0, constant, system).
+
+`/modelo3dFoguete`: Modelo 3d do foguete com o link de origem.
+
+`/Unity`: Projeto completo com os scripts e cenas.
+
+`/Unity/Assets/Meshes_Terra/`: Aqui estão as ondas de choque (.obj) geradas com os parâmetros da Terra importadas do ParaView.
+
+`/Unity/Assets/Meshes_Titan/`: Aqui estão as ondas de choque (.obj) geradas com os parâmetros de Titã importadas do ParaView.
+    
+`/Unity/Assets/Scenes/`: Cena principal comparativa.
+
+
+
+## Comandos de Execução
+
+Sequência de comandos utilizada no terminal para gerar a malha e rodar a simulação CFD:
+
+```bash
+blockMesh
+surfaceFeatureExtract
+snappyHexMesh -overwrite
+checkMesh
+decomposePar
+mpirun -np 6 rhoCentralFoam -parallel
+reconstructPar
+```
+
+---
+*Projeto criado por Leonardo.*
