@@ -1,0 +1,74 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+vertices
+(
+    // Túnel Gigante para a Starship (50m)
+    // Deixamos 100m de espaço antes e 200m depois
+    (-100 -80 -80)  // 0
+    ( 200 -80 -80)  // 1
+    ( 200  80 -80)  // 2
+    (-100  80 -80)  // 3
+    (-100 -80  80)  // 4
+    ( 200 -80  80)  // 5
+    ( 200  80  80)  // 6
+    (-100  80  80)  // 7
+);
+
+blocks
+(
+    // Malha base mais densa (120x60x60 células)
+    hex (0 1 2 3 4 5 6 7) (120 60 60) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (0 4 7 3)
+        );
+    }
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (1 2 6 5)
+        );
+    }
+    walls
+    {
+        type symmetry;
+        faces
+        (
+            (0 1 5 4)
+            (2 3 7 6)
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+);
+
+// ************************************************************************* //

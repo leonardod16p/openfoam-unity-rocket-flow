@@ -1,0 +1,84 @@
+# ------------------------------------------------------
+# UNITY (Ajustado para funcionar em subpastas)
+# ------------------------------------------------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Plugins e Assets gerados automaticamente
+[Aa]ssets/AssetStoreTools*
+[Aa]ssets/Plugins/Editor/JetBrains*
+[Aa]ssets/[Ss]treamingAssets/aa.meta
+[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Arquivos de IDE e Sistema (Visual Studio, Rider, etc)
+.vs/
+.gradle/
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.zip
+
+
+# Arquivos gerados pelo Unity
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+crashlytics-build.properties
+
+# Builds e Executáveis (Não subir!)
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+
+# ------------------------------------------------------
+# OPENFOAM (Dados de Simulação)
+# ------------------------------------------------------
+# Ignora pastas de tempo numéricas (1, 100, 2000...)
+[1-9]*
+
+# Ignora passos de tempo decimais (0.1, 0.0001...) 
+# NOTA: Isso mantém a pasta "0" (condições iniciais) segura.
+0.*
+
+# Ignora malha compilada e resultados de processamento paralelo
+constant/polyMesh/
+processor*/
+postProcessing/
+VTK/
+dynamicCode/
+
+**/constant/polyMesh/
+**/faces
+**/points
+**/owner
+**/neighbour
+
+
+# ------------------------------------------------------
+# SISTEMA OPERACIONAL
+# ------------------------------------------------------
+.DS_Store
+Thumbs.db

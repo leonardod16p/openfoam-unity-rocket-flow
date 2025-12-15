@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+
+mixture
+{
+    specie
+    {
+        molWeight       28.6;  // Valor em titan eh proximo da terra (g/mol)
+    }
+    thermodynamics
+    {
+        Cp              1040; // Calor especifico nitrogenio (J/kgK)
+        Hf              0;
+    }
+    transport
+    {
+        mu              6.8e-06; // Viscosidade do Ar em titan (Pa.s)
+        Pr              0.7;
+    }
+}
+
+// ************************************************************************* //

@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+castellatedMesh true;
+snap            true;
+addLayers       false; // Vamos deixar false por enquanto p/ ser facil
+
+geometry
+{
+    rocket.stl
+    {
+        type triSurfaceMesh;
+        name rocket;
+    }
+};
+
+castellatedMeshControls
+{
+    maxGlobalCells 2000000;
+    maxLocalCells 100000;
+	minRefinementCells 0;
+    maxLoadUnbalance 0.10;
+    nCellsBetweenLevels 6;
+
+    features
+    (
+        {
+            file "rocket.eMesh";
+            level 4;
+        }
+    );
+
+    refinementSurfaces
+    {
+        rocket
+        {
+            level (3 4); // Nivel de detalhe (Min Max). Aumente se ficar feio.
+        }
+    }
+
+    resolveFeatureAngle 30;
+    refinementRegions
+    {
+    }
+
+    locationInMesh (-50 0 0); // <--- IMPORTANTE: Um ponto DENTRO do ar, mas FORA do foguete
+    allowFreeStandingZoneFaces true;
+}
+
+snapControls
+{
+    nSmoothPatch 3;
+    tolerance 2.0;
+    nSolveIter 30;
+    nRelaxIter 5;
+}
+
+addLayersControls
+{
+}
+
+meshQualityControls
+{
+    #include "meshQualityDict"
+}
+
+mergeTolerance 1e-6;
+
+// ************************************************************************* //
