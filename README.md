@@ -4,10 +4,14 @@ Projeto desenvolvido para a disciplina de Computação Científica 2. O objetivo
 
 A ideia principal é entender como as ondas de choque geradas na geometria de um foguete se comportam com parâmetros que simulam a terra e Titã  voando na mesma velocidade.
 
-## Como testar (Download)
-Eu gerei um executável para quem quiser rodar a simulação sem precisar instalar o Unity.
+## Como Ver a Animação sem Precisar de Nada (Download)
+Eu gerei um executável (Linux) para quem quiser ver a animação sem precisar instalar o Unity.
 * **[Baixar a Versão Linux aqui](https://github.com/leonardod16p/openfoam-unity-rocket-flow/releases/tag/v1.0)**
-* Basta extrair o zip e rodar o executável.
+   * Basta extrair o zip e rodar o executável.
+* Sistema: Arch Linux
+* Kernel: Linux 6.17.9-arch1-1
+* Arquitetura: x86_64
+
 
 ## Sobre o Projeto
 O foguete voa a 1000 m/s nos dois casos.
@@ -16,6 +20,7 @@ O foguete voa a 1000 m/s nos dois casos.
 
 **Resultado Visual:**
 No OpenFOAM, isso muda o ângulo da onda de choque. Em Titã, o cone de choque fica bem mais fechado ("colado" no foguete) por causa do Mach elevado. Na terra, o cone se estabiliza com um formato de prato.
+
 
 
 ## Ferramentas Usadas
