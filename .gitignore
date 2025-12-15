@@ -64,17 +64,17 @@ crashlytics-build.properties
 0.*
 
 # Ignora malha compilada e resultados de processamento paralelo
-constant/polyMesh/
+#constant/polyMesh/
 processor*/
 postProcessing/
 VTK/
 dynamicCode/
 
-**/constant/polyMesh/
-**/faces
-**/points
-**/owner
-**/neighbour
+#**/constant/polyMesh/
+#**/faces
+#**/points
+#**/owner
+#**/neighbour
 
 
 # ------------------------------------------------------
