@@ -13,7 +13,7 @@ Eu gerei um executável (Linux) para quem quiser ver a animação sem precisar i
 
 
 ## Sobre o Projeto
-O foguete voa a 1000 m/s nos dois casos. O recorte da onda de choque na Terra foi feito com o filtro Contour no ParaView a aproximadamente 580.000 Pa, e em Titã, a cerca de 2.300.000 Pa.
+O foguete voa a 1000 m/s nos dois casos (na verdade, o fluido escoa na direção do foguete nessa velocidade). O recorte da onda de choque na Terra foi feito com o filtro Contour no ParaView a aproximadamente 580.000 Pa, e em Titã, a cerca de 2.300.000 Pa.
 * Terra: O som viaja a ~343 m/s. O foguete está a Mach 2.9.
 * Titã: É muito frio (94K) e denso, então o som viaja mais devagar (~194 m/s). O mesmo foguete atinge Mach 5.15 (Hipersônico).
 
