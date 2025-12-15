@@ -43,7 +43,7 @@ No OpenFOAM, isso muda o ângulo da onda de choque. Em Titã, o cone de choque f
 
 `/Unity/Assets/Meshes_Titan/`: Aqui estão as ondas de choque (.obj) geradas com os parâmetros de Titã importadas do ParaView.
     
-`/Unity/Assets/Scenes/`: Cena principal comparativa.
+`/Unity/Assets/Scenes/SampleScene.unity`: Arquivo da cena principal do projeto.
 
 
 
