@@ -5,12 +5,11 @@ Projeto desenvolvido para a disciplina de Computação Científica 2. O objetivo
 A ideia principal é entender como as ondas de choque geradas na geometria de um foguete se comportam com parâmetros que simulam a terra e Titã  voando na mesma velocidade.
 
 ## Como Ver a Animação sem Precisar de Nada (Download)
-Eu gerei um executável (Linux) para quem quiser ver a animação sem precisar instalar o Unity.
+Eu gerei um executável (Linux) para quem quiser ver a animação sem precisar instalar o Unity. Basta extrair o zip e rodar o executável
 * **[Baixar a Versão Linux aqui](https://github.com/leonardod16p/openfoam-unity-rocket-flow/releases/tag/v1.0)**
-   * Basta extrair o zip e rodar o executável.
-* Sistema: Arch Linux
-* Kernel: Linux 6.17.9-arch1-1
-* Arquitetura: x86_64
+  * Sistema: Arch Linux
+  * Kernel: Linux 6.17.9-arch1-1
+  * Arquitetura: x86_64
 
 
 ## Sobre o Projeto
