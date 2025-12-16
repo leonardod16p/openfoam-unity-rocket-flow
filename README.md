@@ -72,7 +72,3 @@ reconstructPar
 O repositório contém apenas os arquivos dos parâmetros da simulação.
 Se você quiser baixar os dados gerados pelo comando rhoCentralFoam que usei para extrair a onda de choque clique no link abaixo:
 * **[Baixar Dados no Google Drive](https://drive.google.com/drive/u/1/folders/1s107-5a55q_kGopmb5tvnwGtqzIK0sPB)** (~) (Estou upando ainda)
-
-
----
-*Projeto criado por Leonardo.*
