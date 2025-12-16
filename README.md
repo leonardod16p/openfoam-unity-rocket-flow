@@ -11,6 +11,9 @@ Eu gerei um executável (Linux) para quem quiser ver a animação sem precisar i
   * Kernel: Linux 6.17.9-arch1-1
   * Arquitetura: x86_64
 
+![Preview](demoAnimacao.gif)
+
+
 
 ## Sobre o Projeto
 O foguete voa a 1000 m/s nos dois casos (na verdade, o fluido escoa na direção do foguete nessa velocidade). O recorte da onda de choque na Terra foi feito com o filtro Contour no ParaView a aproximadamente 580.000 Pa, e em Titã, a cerca de 2.300.000 Pa.
