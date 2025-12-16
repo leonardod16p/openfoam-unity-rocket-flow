@@ -11,7 +11,7 @@ Eu gerei um executável (Linux) para quem quiser ver a animação sem precisar i
   * Kernel: Linux 6.17.9-arch1-1
   * Arquitetura: x86_64
 
-## Preview:
+## Preview
 
 ![Preview](demoAnimacao.gif)
 
