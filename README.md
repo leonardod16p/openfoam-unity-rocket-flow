@@ -35,6 +35,8 @@ No OpenFOAM, isso muda o ângulo da onda de choque. Em Titã, o cone de choque f
 ## Estrutura das Pastas
 `/OpenFOAM`: Contém os arquivos de configuração da simulação (0, constant, system).
 
+`/OpenFOAM/*/constant/polyMesh/`: Contém os arquivos de malha gerados pelo openFOAM.
+
 `/modelo3dFoguete`: Modelo 3d do foguete com o link de origem.
 
 `/Unity`: Projeto completo com os scripts e cenas.
